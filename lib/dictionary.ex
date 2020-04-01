@@ -1,18 +1,7 @@
 defmodule Dictionary do
-  @moduledoc """
-  Documentation for `Dictionary`.
-  """
+  alias Dictionary.WordList
 
-  @doc """
-  Hello world.
+  defdelegate start(), to: WordList, as: :word_list
 
-  ## Examples
-
-      iex> Dictionary.hello()
-      :world
-
-  """
-  def hello do
-    :world
-  end
+  defdelegate random_word(word_list), to: WordList
 end
